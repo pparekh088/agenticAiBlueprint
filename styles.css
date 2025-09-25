@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
-    color: #e0e0e0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -26,7 +26,7 @@ header {
 
 h1 {
     font-size: 2.5em;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
@@ -39,12 +39,12 @@ h1 {
 
 /* Control Panel */
 .control-panel {
-    background: rgba(26, 26, 46, 0.8);
+    background: rgba(30, 41, 59, 0.8);
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
     animation: fadeIn 0.8s ease 0.2s both;
 }
 
@@ -64,7 +64,7 @@ h1 {
     flex: 1;
     min-width: 150px;
     padding: 12px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
     border: none;
     border-radius: 8px;
     color: white;
@@ -79,16 +79,16 @@ h1 {
 
 .use-case-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
 }
 
 .use-case-btn.active {
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
 }
 
 .use-case-btn.reset {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 }
 
 .use-case-btn .icon {
@@ -97,12 +97,12 @@ h1 {
 
 /* Architecture Container */
 .architecture-container {
-    background: rgba(26, 26, 46, 0.8);
+    background: rgba(30, 41, 59, 0.8);
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
     position: relative;
     animation: fadeIn 0.8s ease 0.4s both;
 }
@@ -138,7 +138,7 @@ h1 {
 
 /* Connection Paths */
 .connection-path {
-    stroke: #4a90e2;
+    stroke: #64748b;
     stroke-width: 2;
     fill: none;
     opacity: 0.5;
@@ -146,7 +146,7 @@ h1 {
 }
 
 .connection-path.active {
-    stroke: #00ff88;
+    stroke: #10b981;
     stroke-width: 3;
     opacity: 1;
     animation: flowAnimation 2s linear infinite;
@@ -162,8 +162,8 @@ h1 {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(15, 15, 30, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 10px;
     padding: 15px;
     width: 250px;
@@ -178,7 +178,7 @@ h1 {
 }
 
 .details-panel h3 {
-    color: #00ff88;
+    color: #10b981;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
@@ -191,18 +191,18 @@ h1 {
 
 /* Observability Dashboard */
 .observability-dashboard {
-    background: rgba(26, 26, 46, 0.8);
-    border: 2px solid #ff6b6b;
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid #f97316;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
     animation: fadeIn 0.8s ease 0.6s both;
-    box-shadow: 0 0 30px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.2);
 }
 
 .observability-dashboard h2 {
-    color: #ff6b6b;
+    color: #f97316;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -217,19 +217,19 @@ h1 {
 }
 
 .metric-card {
-    background: rgba(15, 15, 30, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     border-radius: 10px;
     padding: 15px;
     display: flex;
     align-items: center;
     gap: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
     transition: all 0.3s ease;
 }
 
 .metric-card:hover {
     transform: translateY(-2px);
-    border-color: #ff6b6b;
+    border-color: #f97316;
 }
 
 .metric-icon {
@@ -245,7 +245,7 @@ h1 {
 .metric-value {
     font-size: 1.8em;
     font-weight: bold;
-    color: #00ff88;
+    color: #10b981;
     margin-bottom: 3px;
 }
 
@@ -256,7 +256,7 @@ h1 {
 
 /* Log Viewer */
 .log-viewer {
-    background: rgba(15, 15, 30, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     border-radius: 10px;
     padding: 15px;
     margin-top: 20px;
@@ -269,7 +269,7 @@ h1 {
 }
 
 .log-container {
-    background: #0a0a0a;
+    background: #020617;
     border-radius: 5px;
     padding: 10px;
     height: 150px;
@@ -283,18 +283,18 @@ h1 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.log-entry.info { color: #4a90e2; }
-.log-entry.success { color: #00ff88; }
-.log-entry.warning { color: #ffd93d; }
-.log-entry.error { color: #ff6b6b; }
+.log-entry.info { color: #3b82f6; }
+.log-entry.success { color: #10b981; }
+.log-entry.warning { color: #f59e0b; }
+.log-entry.error { color: #ef4444; }
 
 /* Legend */
 .legend {
-    background: rgba(26, 26, 46, 0.8);
+    background: rgba(30, 41, 59, 0.8);
     border-radius: 15px;
     padding: 15px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.1);
     animation: fadeIn 0.8s ease 0.8s both;
 }
 

@@ -1,4 +1,4 @@
-// Architecture Components Configuration
+// Architecture Components Configuration with Professional Color Palette
 const components = {
     input: {
         id: 'input',
@@ -7,7 +7,7 @@ const components = {
         width: 120,
         height: 60,
         label: 'User Input',
-        color: '#667eea',
+        color: '#2563eb', // Bright blue for entry point
         description: 'Entry point for all user requests. Accepts queries and initiates the processing flow.'
     },
     complexity: {
@@ -17,7 +17,7 @@ const components = {
         width: 140,
         height: 60,
         label: 'Complexity Check',
-        color: '#ffd93d',
+        color: '#8b5cf6', // Purple for decision point
         description: 'Analyzes request complexity to determine optimal processing path (simple vs complex).'
     },
     langgraph: {
@@ -26,9 +26,9 @@ const components = {
         y: 180,
         width: 160,
         height: 60,
-        label: 'LangGraph Engine',
-        color: '#00cc6a',
-        description: 'Reasoning engine for complex queries. Orchestrates multi-agent workflows and decision trees.'
+        label: 'LangGraph',
+        color: '#ec4899', // Pink for reasoning engine
+        description: 'Reasoning engine for complex decision-making. Orchestrates multi-agent workflows and decision trees.'
     },
     agentA: {
         id: 'agentA',
@@ -37,8 +37,8 @@ const components = {
         width: 120,
         height: 60,
         label: 'Agent A',
-        color: '#4a90e2',
-        description: 'Primary processing agent. Handles simple queries and MCP server integration.'
+        color: '#10b981', // Emerald for agents
+        description: 'Primary processing agent. Handles simple queries and can invoke MCP servers.'
     },
     agentB: {
         id: 'agentB',
@@ -47,7 +47,7 @@ const components = {
         width: 120,
         height: 60,
         label: 'Agent B',
-        color: '#4a90e2',
+        color: '#10b981', // Emerald for agents
         description: 'Specialized agent for complex analytical tasks and data processing.'
     },
     agentC: {
@@ -57,7 +57,7 @@ const components = {
         width: 120,
         height: 60,
         label: 'Agent C',
-        color: '#4a90e2',
+        color: '#10b981', // Emerald for agents
         description: 'Advanced agent for multi-step reasoning and orchestration tasks.'
     },
     mcp: {
@@ -66,9 +66,19 @@ const components = {
         y: 300,
         width: 140,
         height: 60,
-        label: 'MCP Servers',
-        color: '#9333ea',
-        description: 'Model Context Protocol servers for external tool integration and API access.'
+        label: 'MCP Server',
+        color: '#f59e0b', // Amber for integration layer
+        description: 'Model Context Protocol server for connecting to existing systems.'
+    },
+    systemA: {
+        id: 'systemA',
+        x: 1020,
+        y: 380,
+        width: 140,
+        height: 60,
+        label: 'System A',
+        color: '#64748b', // Slate for external systems
+        description: 'Existing system accessed through MCP server integration.'
     },
     rag: {
         id: 'rag',
@@ -76,19 +86,19 @@ const components = {
         y: 420,
         width: 160,
         height: 60,
-        label: 'RAG Pipeline',
-        color: '#06b6d4',
-        description: 'Retrieval Augmented Generation for knowledge base queries and document search.'
+        label: 'RAG on Internal Data',
+        color: '#06b6d4', // Cyan for RAG
+        description: 'Retrieval Augmented Generation directly on internal data sources.'
     },
-    vectordb: {
-        id: 'vectordb',
+    internalData: {
+        id: 'internalData',
         x: 250,
         y: 420,
         width: 120,
         height: 60,
-        label: 'Vector DB',
-        color: '#0891b2',
-        description: 'Embeddings storage for semantic search and similarity matching.'
+        label: 'Internal Data',
+        color: '#0ea5e9', // Sky blue for data sources
+        description: 'Internal knowledge base and document repositories for RAG operations.'
     },
     redis: {
         id: 'redis',
@@ -96,9 +106,9 @@ const components = {
         y: 180,
         width: 120,
         height: 60,
-        label: 'Redis Memory',
-        color: '#dc2626',
-        description: 'In-memory data store for session management and caching agent states.'
+        label: 'Redis',
+        color: '#ef4444', // Red for Redis
+        description: 'Memory management for session state and caching agent contexts.'
     },
     ragas: {
         id: 'ragas',
@@ -106,18 +116,18 @@ const components = {
         y: 420,
         width: 120,
         height: 60,
-        label: 'RAGAS Eval',
-        color: '#f59e0b',
+        label: 'RAGAS',
+        color: '#a855f7', // Purple for evaluation
         description: 'Response evaluation framework for quality assessment and accuracy scoring.'
     },
     output: {
         id: 'output',
         x: 1020,
-        y: 300,
+        y: 240,
         width: 120,
         height: 60,
         label: 'Response',
-        color: '#10b981',
+        color: '#22c55e', // Green for output
         description: 'Final processed response delivered to the user with quality metrics.'
     },
     azure: {
@@ -126,9 +136,9 @@ const components = {
         y: 520,
         width: 140,
         height: 50,
-        label: '☁️ Azure Hosting',
-        color: '#0078d4',
-        description: 'Cloud infrastructure hosting all components with auto-scaling and high availability.'
+        label: 'Azure',
+        color: '#0078d4', // Azure blue
+        description: 'Cloud hosting infrastructure with auto-scaling and high availability.'
     },
     observability: {
         id: 'observability',
@@ -137,7 +147,7 @@ const components = {
         width: 500,
         height: 40,
         label: '🔍 Observability Layer (Always Active)',
-        color: '#ff6b6b',
+        color: '#f97316', // Orange for observability
         description: 'Comprehensive monitoring, logging, tracing, and metrics collection for all components.'
     }
 };
@@ -146,7 +156,7 @@ const components = {
 const connections = {
     simple: [
         { from: 'input', to: 'complexity', id: 'path-input-complexity' },
-        { from: 'complexity', to: 'agentA', id: 'path-complexity-agentA' },
+        { from: 'complexity', to: 'agentA', id: 'path-complexity-agentA-simple' },
         { from: 'agentA', to: 'output', id: 'path-agentA-output' }
     ],
     complex: [
@@ -156,6 +166,7 @@ const connections = {
         { from: 'langgraph', to: 'agentB', id: 'path-langgraph-agentB' },
         { from: 'langgraph', to: 'agentC', id: 'path-langgraph-agentC' },
         { from: 'agentA', to: 'mcp', id: 'path-agentA-mcp' },
+        { from: 'mcp', to: 'systemA', id: 'path-mcp-systemA' },
         { from: 'agentB', to: 'redis', id: 'path-agentB-redis' },
         { from: 'agentC', to: 'redis', id: 'path-agentC-redis' },
         { from: 'mcp', to: 'output', id: 'path-mcp-output' },
@@ -164,7 +175,7 @@ const connections = {
     rag: [
         { from: 'input', to: 'complexity', id: 'path-input-complexity' },
         { from: 'complexity', to: 'rag', id: 'path-complexity-rag' },
-        { from: 'vectordb', to: 'rag', id: 'path-vectordb-rag' },
+        { from: 'internalData', to: 'rag', id: 'path-internalData-rag' },
         { from: 'rag', to: 'ragas', id: 'path-rag-ragas' },
         { from: 'ragas', to: 'output', id: 'path-ragas-output' }
     ],
@@ -174,7 +185,8 @@ const connections = {
         { from: 'observability', to: 'agentA', id: 'obs-agentA', dashed: true },
         { from: 'observability', to: 'rag', id: 'obs-rag', dashed: true },
         { from: 'observability', to: 'redis', id: 'obs-redis', dashed: true },
-        { from: 'observability', to: 'ragas', id: 'obs-ragas', dashed: true }
+        { from: 'observability', to: 'ragas', id: 'obs-ragas', dashed: true },
+        { from: 'observability', to: 'mcp', id: 'obs-mcp', dashed: true }
     ]
 };
 
@@ -300,7 +312,7 @@ function createConnectionPath(conn) {
     
     if (conn.dashed) {
         path.setAttribute('stroke-dasharray', '5,5');
-        path.setAttribute('stroke', '#ff6b6b');
+        path.setAttribute('stroke', '#f97316');
         path.setAttribute('opacity', '0.4');
     }
     
@@ -400,7 +412,7 @@ function highlightObservability() {
         obsBox.classList.add('highlight');
         const rect = obsBox.querySelector('rect');
         rect.setAttribute('fill-opacity', '1');
-        rect.setAttribute('filter', 'drop-shadow(0 0 15px rgba(255, 107, 107, 0.6))');
+        rect.setAttribute('filter', 'drop-shadow(0 0 15px rgba(249, 115, 22, 0.6))');
     }
     
     // Show observability connections
@@ -528,19 +540,20 @@ function getProcessingSteps(useCase) {
         complex: [
             { component: 'input', message: 'Receiving user input...' },
             { component: 'complexity', message: 'Analyzing complexity: COMPLEX', type: 'warning' },
-            { component: 'langgraph', message: 'Initiating LangGraph reasoning engine...', type: 'info' },
+            { component: 'langgraph', message: 'LangGraph reasoning engine routing request...', type: 'info' },
             { component: 'agentB', message: 'Agent B processing analytical tasks...', type: 'success' },
             { component: 'redis', message: 'Storing state in Redis memory...', type: 'info' },
-            { component: 'agentA', message: 'Agent A coordinating with MCP servers...', type: 'success' },
-            { component: 'mcp', message: 'MCP servers executing external tools...', type: 'info' },
+            { component: 'agentA', message: 'Agent A invoking MCP server...', type: 'success' },
+            { component: 'mcp', message: 'MCP server connecting to System A...', type: 'info' },
+            { component: 'systemA', message: 'System A processing request...', type: 'info' },
             { component: 'output', message: 'Complex response assembled', type: 'success' }
         ],
         rag: [
             { component: 'input', message: 'Receiving RAG query...' },
             { component: 'complexity', message: 'Routing to RAG pipeline...', type: 'info' },
-            { component: 'vectordb', message: 'Searching vector database...', type: 'info' },
-            { component: 'rag', message: 'Retrieving relevant documents...', type: 'success' },
-            { component: 'ragas', message: 'Evaluating response quality...', type: 'warning' },
+            { component: 'internalData', message: 'Accessing internal data sources...', type: 'info' },
+            { component: 'rag', message: 'Performing RAG on internal data...', type: 'success' },
+            { component: 'ragas', message: 'RAGAS evaluating response quality...', type: 'warning' },
             { component: 'output', message: 'RAG response delivered', type: 'success' }
         ]
     };

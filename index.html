@@ -42,18 +42,18 @@
                 <!-- Define arrow markers -->
                 <defs>
                     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" fill="#4a90e2"/>
+                        <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
                     </marker>
                     <marker id="arrowhead-active" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" fill="#00ff88"/>
+                        <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
                     </marker>
                 </defs>
 
                 <!-- Background grid -->
                 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a2e" stroke-width="0.5" opacity="0.3"/>
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
                 </pattern>
-                <rect width="100%" height="100%" fill="#0f0f1e"/>
+                <rect width="100%" height="100%" fill="#0f172a"/>
                 <rect width="100%" height="100%" fill="url(#grid)"/>
 
                 <!-- Components will be dynamically added here -->
@@ -118,20 +118,28 @@
             <h3>Legend</h3>
             <div class="legend-items">
                 <div class="legend-item">
-                    <div class="legend-color" style="background: #4a90e2;"></div>
+                    <div class="legend-color" style="background: #64748b;"></div>
                     <span>Default Path</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: #00ff88;"></div>
+                    <div class="legend-color" style="background: #10b981;"></div>
                     <span>Active Path</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: #ff6b6b;"></div>
+                    <div class="legend-color" style="background: #f97316;"></div>
                     <span>Observability Layer</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: #ffd93d;"></div>
-                    <span>Processing Component</span>
+                    <div class="legend-color" style="background: #8b5cf6;"></div>
+                    <span>Decision Points</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #10b981;"></div>
+                    <span>Agents</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #06b6d4;"></div>
+                    <span>RAG Components</span>
                 </div>
             </div>
         </div>
