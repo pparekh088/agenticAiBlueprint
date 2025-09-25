@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Solution Blueprint - Interactive Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Agentic AI Solution Blueprint</h1>
+            <p class="subtitle">Interactive Architecture Visualization with Full Observability</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2>Select Use Case</h2>
+            <div class="button-group">
+                <button class="use-case-btn" data-case="simple">
+                    <span class="icon">⚡</span>
+                    Simple Use Case
+                </button>
+                <button class="use-case-btn" data-case="complex">
+                    <span class="icon">🔄</span>
+                    Complex Use Case
+                </button>
+                <button class="use-case-btn" data-case="rag">
+                    <span class="icon">📚</span>
+                    RAG Use Case
+                </button>
+                <button class="use-case-btn reset" data-case="reset">
+                    <span class="icon">🔄</span>
+                    Reset View
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Architecture Diagram -->
+        <div class="architecture-container">
+            <svg id="architecture-svg" viewBox="0 0 1200 800">
+                <!-- Define arrow markers -->
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+                    </marker>
+                    <marker id="arrowhead-active" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+                    </marker>
+                </defs>
+
+                <!-- Background grid -->
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+                </pattern>
+                <rect width="100%" height="100%" fill="#0f172a"/>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+
+                <!-- Components will be dynamically added here -->
+            </svg>
+
+            <!-- Component Details Panel -->
+            <div class="details-panel" id="details-panel">
+                <h3>Component Details</h3>
+                <div class="details-content">
+                    <p>Click on any component to see details</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Observability Dashboard -->
+        <div class="observability-dashboard">
+            <h2>🔍 Observability Dashboard</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">📊</div>
+                    <div class="metric-info">
+                        <h4>Request Metrics</h4>
+                        <div class="metric-value" id="request-count">0</div>
+                        <div class="metric-label">Total Requests</div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-info">
+                        <h4>Latency</h4>
+                        <div class="metric-value" id="latency">0ms</div>
+                        <div class="metric-label">Avg Response Time</div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-info">
+                        <h4>Accuracy</h4>
+                        <div class="metric-value" id="accuracy">0%</div>
+                        <div class="metric-label">RAGAS Score</div>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💾</div>
+                    <div class="metric-info">
+                        <h4>Memory Usage</h4>
+                        <div class="metric-value" id="memory">0MB</div>
+                        <div class="metric-label">Redis Cache</div>
+                    </div>
+                </div>
+            </div>
+            <div class="log-viewer">
+                <h3>📝 Real-time Logs</h3>
+                <div class="log-container" id="log-container">
+                    <div class="log-entry info">[INFO] System initialized successfully</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #64748b;"></div>
+                    <span>Default Path</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #10b981;"></div>
+                    <span>Active Path</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f97316;"></div>
+                    <span>Observability Layer</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8b5cf6;"></div>
+                    <span>Decision Points</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #10b981;"></div>
+                    <span>Agents</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #06b6d4;"></div>
+                    <span>RAG Components</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
