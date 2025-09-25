@@ -3,8 +3,8 @@
 FROM node:20-alpine AS frontend-builder
 
 WORKDIR /app/frontend
-COPY frontend/package*.json ./
-RUN npm ci
+COPY frontend/package.json ./
+RUN npm install
 
 COPY frontend/ ./
 RUN npm run build
@@ -29,8 +29,8 @@ COPY backend/ ./backend/
 # Copy built frontend from previous stage
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
-# Create a simple static file server for the frontend
-RUN pip install aiofiles
+# Install additional dependencies for serving static files
+RUN pip install aiofiles requests
 
 # Create a combined server script
 RUN cat > server.py << 'EOF'
@@ -48,12 +48,8 @@ app = FastAPI()
 app.mount("/api", backend_app)
 
 # Serve frontend static files
-app.mount("/assets", StaticFiles(directory="frontend/dist/assets"), name="assets")
-
-# Serve index.html for all other routes (SPA)
-@app.get("/{full_path:path}")
-async def serve_spa(full_path: str):
-    return FileResponse("frontend/dist/index.html")
+if os.path.exists("frontend/dist"):
+    app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="static")
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
